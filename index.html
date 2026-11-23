@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy birthday!</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#2fdc5c;--dot:rgba(0,70,20,.28);--ink:#0b1a10;--paper:#f4f1e6;--lime:#d7ff2e;--pink:#ff2e88;--deep:#0c3b1f;--black:#101010;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d2a17;--dot:rgba(47,220,92,.18);--ink:#e8ffe9}}
+:root[data-theme="dark"]{--bg:#0d2a17;--dot:rgba(47,220,92,.18);--ink:#e8ffe9}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Special Elite','Courier New',monospace;line-height:1.5;overflow-x:hidden;
+background-image:radial-gradient(circle,var(--dot) 2px,transparent 2.6px);background-size:13px 13px}
+section{max-width:1000px;margin:0 auto;padding:46px 18px;position:relative}
+h2{font-family:'Bangers',Impact,sans-serif;font-weight:400;letter-spacing:2px;font-size:clamp(38px,8vw,66px);line-height:1;margin:0 0 26px;transform:rotate(-2deg);display:inline-block;
+background:var(--black);color:var(--lime);padding:4px 16px 8px;box-shadow:6px 6px 0 var(--pink)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:4px dashed var(--pink);outline-offset:3px}
+.ink{border:4px solid var(--black);box-shadow:8px 8px 0 var(--black)}
+
+/* tape strips */
+.strip{background:repeating-linear-gradient(-45deg,var(--black) 0 18px,var(--lime) 18px 36px);border-block:4px solid var(--black);overflow:hidden;transform:rotate(-1.5deg);margin:14px -10px;white-space:nowrap}
+.strip div{display:inline-block;font-family:'Bangers',Impact,sans-serif;font-size:26px;letter-spacing:3px;padding:6px 0;animation:run 18s linear infinite}
+.strip b{background:var(--black);color:var(--lime);font-weight:400;padding:2px 14px;margin-right:36px}
+@keyframes run{to{transform:translateX(-50%)}}
+.strip.alt{transform:rotate(1.2deg);background:repeating-linear-gradient(45deg,var(--black) 0 18px,var(--pink) 18px 36px)}
+.strip.alt b{color:var(--pink)}
+
+/* hero */
+.hero{text-align:center;padding-top:34px}
+.name{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 2px;margin:10px 0 0;position:relative;z-index:2}
+.name span{font-family:'Bangers',Impact,sans-serif;font-size:clamp(60px,18vw,150px);line-height:.95;padding:0 10px 6px;border:4px solid var(--black);box-shadow:4px 5px 0 var(--black);
+clip-path:polygon(0 5%,12% 0,40% 4%,70% 0,100% 3%,98% 50%,100% 96%,66% 100%,35% 97%,5% 100%,2% 50%);animation:slam .45s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes slam{from{transform:translateY(-120px) scale(1.6) rotate(20deg);opacity:0}}
+.say{font-family:'Permanent Marker',cursive;font-size:clamp(22px,5vw,34px);background:var(--paper);color:var(--black);display:inline-block;padding:6px 18px;transform:rotate(-3deg);margin-bottom:6px}
+.burst{width:clamp(190px,44vw,290px);aspect-ratio:1;margin:-18px auto -10px;display:grid;place-items:center;position:relative;transform:rotate(-8deg);
+background:var(--black);clip-path:polygon(50% 0%,61% 18%,80% 8%,78% 30%,98% 33%,84% 50%,98% 67%,78% 70%,80% 92%,61% 82%,50% 100%,39% 82%,20% 92%,22% 70%,2% 67%,16% 50%,2% 33%,22% 30%,20% 8%,39% 18%)}
+.burst i{position:absolute;inset:7px;background:var(--lime);clip-path:inherit}
+.burst p{position:relative;margin:0;font-family:'Bangers',Impact,sans-serif;color:var(--black);text-align:center;line-height:.85;font-size:clamp(20px,5vw,30px)}
+.burst b{display:block;font-weight:400;font-size:2.9em;color:var(--pink);-webkit-text-stroke:2px var(--black)}
+.pop{background:var(--pink);color:var(--black);font-family:'Bangers',Impact,sans-serif;font-size:30px;letter-spacing:2px;padding:8px 30px 12px;border:4px solid var(--black);box-shadow:6px 6px 0 var(--black);transform:rotate(2deg);margin-top:26px}
+.pop:active{transform:translate(4px,4px) rotate(2deg);box-shadow:2px 2px 0 var(--black)}
+
+/* comic panels (photos) */
+.wall{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;align-items:start}
+.panel{position:relative;background:var(--paper);padding:8px;color:var(--black);text-align:left}
+.panel:nth-child(1){grid-column:1/4;transform:rotate(-2.5deg)}
+.panel:nth-child(2){grid-column:4/7;transform:rotate(2deg) translateY(26px)}
+.panel:nth-child(3){grid-column:2/6;transform:rotate(-1deg) translateY(10px)}
+.pic{aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden;font-family:'Permanent Marker',cursive;font-size:20px;text-align:center;padding:10px;
+background-color:var(--lime);background-image:radial-gradient(circle,var(--black) 2px,transparent 2.8px);background-size:12px 12px}
+.panel:nth-child(2) .pic{background-color:var(--pink)}.panel:nth-child(3) .pic{background-color:var(--paper)}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.box{position:absolute;left:-6px;top:-14px;background:#ffe83a;border:3px solid var(--black);font-family:'Bangers',Impact,sans-serif;font-size:19px;letter-spacing:1px;padding:1px 10px;transform:rotate(-3deg)}
+.pin{position:absolute;right:10px;top:-10px;width:22px;height:22px;border-radius:50%;background:var(--pink);border:3px solid var(--black)}
+@media(max-width:640px){.wall{grid-template-columns:1fr}.panel:nth-child(n){grid-column:1;transform:rotate(-1.5deg)}.panel:nth-child(even){transform:rotate(1.5deg)}}
+
+/* speech bubbles */
+.bubbles{display:flex;flex-wrap:wrap;gap:30px 20px}
+.bub{flex:1 1 240px;position:relative;background:var(--paper);color:var(--black);padding:20px 20px 24px;border:4px solid var(--black);border-radius:46% 54% 48% 52%/60% 56% 44% 40%;font-size:17px;text-align:center;box-shadow:6px 6px 0 var(--black);margin-bottom:14px}
+.bub::after{content:"";position:absolute;bottom:-17px;left:28%;width:26px;height:26px;background:inherit;border-right:4px solid var(--black);border-bottom:4px solid var(--black);transform:rotate(55deg) skew(10deg)}
+.bub:nth-child(2n){transform:rotate(2deg);background:var(--lime)}.bub:nth-child(2n)::after{left:60%}
+.bub:nth-child(2n+1){transform:rotate(-2deg)}.bub:nth-child(3){background:var(--pink)}
+
+/* time traveler */
+.tt{background:var(--deep);color:#e8ffe9;padding:26px 20px 30px;position:relative;
+background-image:radial-gradient(circle,rgba(47,220,92,.3) 2px,transparent 2.6px);background-size:12px 12px}
+.cap{display:inline-block;background:#ffe83a;color:var(--black);border:3px solid var(--black);font-family:'Bangers',Impact,sans-serif;font-size:22px;letter-spacing:1px;padding:2px 12px;margin:-44px 0 16px -10px;transform:rotate(-2deg)}
+.tt .bub{display:block;max-width:640px;margin:10px auto 34px;font-size:clamp(18px,3.6vw,24px);min-height:8.5em;display:grid;place-items:center;transform:rotate(-1deg);background:var(--paper)}
+.tt .bub::after{left:20%}
+.tt button{background:var(--lime);color:var(--black);font-family:'Bangers',Impact,sans-serif;font-size:24px;letter-spacing:2px;padding:6px 22px 9px;border:4px solid var(--black);box-shadow:5px 5px 0 var(--pink);display:block;margin:0 auto}
+.tt button:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--pink)}
+
+/* wish board */
+.board{background:var(--paper);color:var(--black);padding:22px 18px}
+.board form{display:flex;flex-wrap:wrap;gap:10px}
+.board input{flex:1 1 220px;font:inherit;padding:10px 12px;border:4px solid var(--black);background:#fff;color:var(--black)}
+.board .add{background:var(--lime);border:4px solid var(--black);padding:8px 20px 11px;font-family:'Bangers',Impact,sans-serif;font-size:24px;letter-spacing:2px;color:var(--black);box-shadow:4px 4px 0 var(--black)}
+.wishes{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
+.wish{font-family:'Permanent Marker',cursive;font-size:19px;line-height:1.15;padding:12px 16px;max-width:270px;border:3px solid var(--black);box-shadow:4px 4px 0 var(--black)}
+.empty{font-size:15px;opacity:.75}
+footer{text-align:center;padding:30px 18px 60px;font-family:'Bangers',Impact,sans-serif;font-size:clamp(30px,7vw,52px);letter-spacing:2px}
+footer span{background:var(--black);color:var(--lime);padding:2px 14px 6px;display:inline-block;transform:rotate(-2deg);box-shadow:6px 6px 0 var(--pink)}
+
+/* confetti */
+.bit{position:fixed;top:-20px;width:13px;height:18px;z-index:50;pointer-events:none;border:2px solid #101010;animation:fall 2.4s ease-in forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@media (prefers-reduced-motion:reduce){.bit,.strip div,.name span{animation-duration:.01s}}
+</style>
+</head>
+<body>
+
+<div class="strip"><div id="s1"></div></div>
+
+<section class="hero">
+  <span class="say">yo, it's your birthday!!</span>
+  <div class="name" id="name" aria-label="Happy birthday"></div>
+  <div class="burst"><i></i><p>turning<b id="age"></b>NO REFUNDS</p></div>
+  <button class="pop" id="pop">POP IT!</button>
+</section>
+
+<div class="strip alt"><div id="s2"></div></div>
+
+<section>
+  <h2>Evidence</h2>
+  <div class="wall">
+    <button class="panel ink" aria-label="Add a photo"><span class="box">EXHIBIT A</span><span class="pin"></span><span class="pic">tap to add a photo</span></button>
+    <button class="panel ink" aria-label="Add a photo"><span class="box">PEAK CHAOS</span><span class="pin"></span><span class="pic">tap to add a photo</span></button>
+    <button class="panel ink" aria-label="Add a photo"><span class="box">NO REGRETS</span><span class="pin"></span><span class="pic">tap to add a photo</span></button>
+  </div>
+  <input type="file" id="file" accept="image/*" hidden>
+</section>
+
+<section>
+  <h2>Facts about you</h2>
+  <div class="bubbles">
+    <div class="bub">You show up. Every time. No matter what.</div>
+    <div class="bub">Your laugh is the loudest thing in any room.</div>
+    <div class="bub">You turn bad days into great stories.</div>
+    <div class="bub">The group chat is nothing without you.</div>
+  </div>
+</section>
+
+<section>
+  <div class="tt ink">
+    <span class="cap">MEANWHILE, IN THE YEAR 3026...</span>
+    <div class="bub" id="line"></div>
+    <button id="next">ANOTHER ONE</button>
+  </div>
+</section>
+
+<section>
+  <h2>Pin a wish</h2>
+  <div class="board ink">
+    <form id="wf">
+      <input id="wi" maxlength="90" placeholder="Write a birthday wish" aria-label="Your birthday wish">
+      <button class="add" type="submit">PIN IT</button>
+    </form>
+    <div class="wishes" id="wishes"><span class="empty" id="empty">No wishes yet. Be the first to pin one.</span></div>
+  </div>
+</section>
+
+<footer><span>HAPPY BIRTHDAY, <em id="n2" style="font-style:normal"></em>!</span></footer>
+
+<script>
+/* Change these two lines for your friend */
+var NAME = "Alex", AGE = 25;
+
+var cols = [["#d7ff2e","#101010"],["#ff2e88","#101010"],["#f4f1e6","#101010"],["#101010","#d7ff2e"],["#2fdc5c","#101010"]];
+var nm = document.getElementById("name");
+NAME.toUpperCase().split("").forEach(function(ch,i){
+  if(ch===" "){var g=document.createElement("i");g.style.width="26px";nm.appendChild(g);return;}
+  var s=document.createElement("span"), c=cols[i%cols.length];
+  s.textContent=ch; s.style.background=c[0]; s.style.color=c[1];
+  s.style.animationDelay=(i*0.09)+"s";
+  s.style.transform="rotate("+[-6,4,-3,7,-4,3][i%6]+"deg) translateY("+[0,8,-6,4,-3][i%5]+"px)";
+  nm.appendChild(s);
+});
+document.getElementById("age").textContent=AGE;
+document.getElementById("n2").textContent=NAME.toUpperCase();
+document.title="Happy birthday, "+NAME+"!";
+
+var msg="<b>HAPPY BIRTHDAY</b>".repeat(8), msg2="<b>ANOTHER LAP AROUND THE SUN</b>".repeat(5);
+document.getElementById("s1").innerHTML=msg+msg;
+document.getElementById("s2").innerHTML=msg2+msg2;
+
+var lines=[
+ "Are you a time machine? Because I just jumped 1,000 years to find you, and honestly, worth it.",
+ "I've seen every timeline, and in all of them I'm hoping you say yes to cake with me.",
+ "I broke the space-time continuum to wish you happy birthday. Please don't tell the Time Police.",
+ "Back in 3026 they still talk about this birthday. Can I get your number so I can tell them how it went?"
+], li=0, lb=document.getElementById("line");
+function showLine(){lb.textContent=lines[li%lines.length];}
+showLine();
+document.getElementById("next").addEventListener("click",function(){li++;showLine();});
+
+function confetti(){
+  var c=["#2fdc5c","#d7ff2e","#ff2e88","#f4f1e6","#101010"];
+  for(var i=0;i<56;i++){
+    var b=document.createElement("span");b.className="bit";
+    b.style.left=Math.random()*100+"vw";b.style.background=c[i%5];
+    b.style.animationDelay=Math.random()*.7+"s";
+    b.style.transform="rotate("+Math.random()*180+"deg)";
+    document.body.appendChild(b);
+    setTimeout(function(el){el.remove()},3500,b);
+  }
+}
+document.getElementById("pop").addEventListener("click",confetti);
+setTimeout(confetti,700);
+
+var file=document.getElementById("file"), target=null;
+document.querySelectorAll(".panel").forEach(function(p){p.addEventListener("click",function(){target=p;file.click();});});
+file.addEventListener("change",function(){
+  var f=file.files&&file.files[0]; if(!f||!target)return;
+  var r=new FileReader();
+  r.onload=function(){var pic=target.querySelector(".pic");pic.innerHTML="";var im=document.createElement("img");im.src=r.result;im.alt="";pic.appendChild(im);};
+  r.readAsDataURL(f); file.value="";
+});
+
+var wc=[["#d7ff2e","#101010"],["#ff2e88","#101010"],["#2fdc5c","#101010"],["#101010","#d7ff2e"]], wn=0;
+document.getElementById("wf").addEventListener("submit",function(e){
+  e.preventDefault();
+  var inp=document.getElementById("wi"), t=inp.value.trim(); if(!t)return;
+  var e0=document.getElementById("empty"); if(e0)e0.remove();
+  var d=document.createElement("div");d.className="wish";d.textContent=t;
+  var c=wc[wn%4];d.style.background=c[0];d.style.color=c[1];
+  d.style.transform="rotate("+[-3,2.5,-1.5,3][wn%4]+"deg)";wn++;
+  document.getElementById("wishes").appendChild(d);
+  inp.value="";confetti();
+});
+</script>
+</body>
+</html>
